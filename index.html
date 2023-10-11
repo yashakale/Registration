@@ -1,0 +1,52 @@
+<html><head>
+	<title>Submit Product</title>
+ <link rel="me" href="https://www.blogger.com/profile/08721041568417726306">
+ <link rel="stylesheet" href="style.css">
+ </head>
+    <body inmaintabuse="1">
+	    <div class="content">
+            <center>
+            <form method="post" action="" name="product" id="product">
+                <h1>Claim Your Certificate</h1>
+                <p style="font-size: 15px; margin: 3%;"><b>Fill The Form, Claim Your E-Certificate, And Wear Your Cyber-Badge Of Honor.</b></p>
+		    <hr>
+                <label for="naem"><b>Name</b></label>
+                <input class="fil" type="text" name="name" placeholder="Enter your Name" required="">
+
+                <label for="naem"><b>College Name</b></label>
+                <input class="fil" type="text" name="collegename" placeholder="Enter your College name " required="">
+
+                <label for="naem"><b>Study year</b></label>
+                <input class="fil" type="text" name="year" placeholder="Enter your year" required="">
+           
+                <label for="naem"><b>Gender</b></label>
+                <input class="fil" type="text" name="gender" placeholder="Enter your Gender" required="">
+
+                <label for="naem"><b>Email Address</b></label>
+                <input class="fil" type="text" name="email" placeholder="Enter your Email" required="">
+
+                <label for="naem"><b>Phone Number</b></label>
+                <input class="fil" type="text" name="number" placeholder="Enter your Number">
+
+                <label for="naem"><b>WhatsApp No.</b></label>
+                <input class="fil" type="text" name="wnumber" placeholder="Enater your WhatsApp No.">
+
+                <button class="click">Submit ➔</button>
+            </form>
+            </center>
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyMHjyWR9BHk5HRoEGnZXs1rWqga-KSiHoGW_s_usnbk8zkF_5gVvq4XKiBneIMbGLzYw/exec'
+            const form = document.forms['product']
+      
+            form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Your form has been Submitted Successfully! Soon you will receive your E-Certificate & Badge via Email! " ))
+                .then(() => {  window.location.reload(); })
+                .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+    </body>
+      
+</html>
